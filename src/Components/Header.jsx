@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Images/swiss-tools.jpg";
+import Logo from "../Images/swiss-diy.png";
 
 function Header(props) {
   return (
