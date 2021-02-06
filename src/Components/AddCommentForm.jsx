@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 
-function AddCommentForm(setAddComment) {
+function AddCommentForm({ setAddComment, id }) {
   const [formData, setFormData] = useState(null);
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
 
-  async function postComment() {}
-  //
+  function postComment() {
+    axios
+      .post(`${url}/project/addcomment/${id}`, formData)
+      .catch((err) => console.log(err));
+  }
   //
   //
   function handleSubmit() {
     postComment(formData);
     setAddComment(false);
+    console.log(formData);
   }
   function handleChange(event) {
     setFormData({ ...formData, [event.target.name]: event.target.value });

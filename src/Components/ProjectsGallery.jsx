@@ -10,9 +10,7 @@ function ProjectsGallery() {
 
   useEffect(() => {
     if (searchComplete === true) {
-      console.log(searchResults);
       setProjects(searchResults);
-      console.log(projects);
     }
   }, [searchComplete, projects, searchResults, setSearchComplete]);
 
