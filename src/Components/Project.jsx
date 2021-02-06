@@ -1,42 +1,44 @@
 import React, { useState, useEffect } from "react";
-import Comments from "./Comments";
+import CommentSection from "./CommentSection";
 import UserGallery from "./UserGallery";
 
 function Project({ match }) {
   const [project, setProject] = useState(null);
+  const [showProject, setShowProject] = useState(false);
 
   // GET specific project from api
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
 
-  async function getProject({ match }) {
+  async function getProject(match) {
     const result = await axios.get(`${url}/project/${match.params.id}`);
-    return result;
+    setProject(result);
+    setShowProject(true);
   }
 
   // on page load
   useEffect(() => {
-    getProject({ match }).then((result) => setProject(result.data));
+    getProject(match);
   }, []);
 
-  if (project !== null) {
+  if (showProject === true) {
     return (
       <>
         <iframe
-          title={`${project.title}`}
+          title={`${project.data.title}`}
           width="560"
           height="315"
-          src={`${project.video.href}`}
+          src={`${project.data.video.href}`}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        <h1>{project.title}</h1>
-        <h3>{project.author}</h3>
-        <p>{project.description}</p>
+        <h1>{project.data.title}</h1>
+        <h3>{project.data.author}</h3>
+        <p>{project.data.description}</p>
         <p>You'll probably need the following:</p>
         <ul className="materials">
-          {project.materials.map((e) => {
+          {project.data.materials.map((e) => {
             return (
               <li className="material" key={e}>
                 {e}
@@ -44,8 +46,11 @@ function Project({ match }) {
             );
           })}
         </ul>
-        <Comments comments={project.comments} props={project._id} />
-        <UserGallery images={project.gallery} />
+        <CommentSection
+          comments={project.data.comments}
+          id={project.data._id}
+        />
+        <UserGallery images={project.data.gallery} />
       </>
     );
   }
