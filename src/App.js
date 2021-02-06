@@ -39,8 +39,6 @@ function App() {
         <Route exact path="/">
           <Searchbar />
           <CategoryGallery />
-        </Route>
-        <Route exact path="/projects">
           <ProjectsGallery />
         </Route>
         <Route exact path="/project/:id" component={Project} />
