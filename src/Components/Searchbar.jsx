@@ -1,16 +1,11 @@
 import React, { useState, useContext } from "react";
 import SearchContext from "./SearchContext";
-import ProjectsGallery from "./ProjectsGallery";
 
 function Searchbar() {
   // imported context
-  const {
-    setSearching,
-    searchResults,
-    setSearchResults,
-    searchComplete,
-    setSearchComplete,
-  } = useContext(SearchContext);
+  const { searchResults, setSearchResults, setSearchComplete } = useContext(
+    SearchContext
+  );
 
   // user input
   const [searchString, setSearchString] = useState("");
@@ -19,8 +14,8 @@ function Searchbar() {
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
 
-  async function getResults(searchString) {
-    const result = await axios.get(`${url}/project/search/${searchString}`);
+  function getResults(searchString) {
+    const result = axios.get(`${url}/project/search/${searchString}`);
     return result;
   }
 
