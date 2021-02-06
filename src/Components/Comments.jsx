@@ -1,41 +1,23 @@
 import React, { useState, useEffect } from "react";
-import AddCommentForm from "./AddCommentForm";
 
-function Comments({ comments }, props) {
-  const [commentsArray, setCommentsArray] = useState([]);
-  const [addComment, setAddComment] = useState(false);
+function Comments({ comments }) {
+  const [commentData, setCommentData] = useState([]);
+  const axios = require("axios");
+  const url = "https://morning-taiga-97781.herokuapp.com";
 
-  // on load grab comments
+  async function getComments() {
+    const results = await axios.get(`${url}/project/comments`);
+    setCommentData(results.data);
+  }
+  console.log(commentData);
   useEffect(() => {
-    setCommentsArray(comments);
-    console.log(props);
-  }, [comments, commentsArray]);
-
-  // trigger comment form to show
-  function handleClick() {
-    setAddComment(true);
-  }
-  //
-  //
-  //
-  if (addComment === false) {
-    return (
-      <div>
-        <button onClick={handleClick}>add comment</button>
-      </div>
-    );
-  }
-  //
-  //
-  //
-  if (addComment === true) {
-    return (
-      <>
-        <AddCommentForm setAddComment={setAddComment} />
-      </>
-    );
-  }
-  return <></>;
+    getComments();
+  }, []);
+  return (
+    <div>
+      <ul></ul>
+    </div>
+  );
 }
 
 export default Comments;

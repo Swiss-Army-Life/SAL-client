@@ -26,7 +26,6 @@ function Searchbar() {
     getResults(searchString).then((result) => {
       setSearchResults(result);
       setSearchComplete(true);
-      console.log(searchResults);
     });
   }
 
