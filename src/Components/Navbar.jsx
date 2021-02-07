@@ -1,4 +1,8 @@
 import React from "react";
+
+// import component
+import CreateProject from './CreateProject'
+
 //install react-router-dom and import
 import { Link } from "react-router-dom";
 
@@ -14,7 +18,9 @@ function Navbar(props) {
 
       {/* ---- Link to Create A Project ---- */}
       <div>
-        <Link to="/project/addproject">Create Project</Link>
+        <Link to="/project/addproject">Create Project
+        <CreateProject />
+        </Link>
       </div>
     </div>
   );
