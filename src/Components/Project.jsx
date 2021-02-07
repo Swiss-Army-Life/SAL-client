@@ -5,10 +5,10 @@ import UserGallery from "./UserGallery";
 function Project({ match }) {
   const [project, setProject] = useState(null);
   const [showProject, setShowProject] = useState(false);
-
-  // GET specific project from api
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
+
+  // GET specific project from api
 
   async function getProject(match) {
     const result = await axios.get(`${url}/project/${match.params.id}`);
@@ -16,7 +16,7 @@ function Project({ match }) {
     setShowProject(true);
   }
 
-  // on page load
+  // on page load grab the specific project
   useEffect(() => {
     getProject(match);
   }, []);
