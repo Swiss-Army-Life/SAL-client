@@ -22,13 +22,11 @@ function CommentSection({ id, comments }) {
     return (
       <div>
         <button onClick={handleClick}>add comment</button>
-        <Comments comments={commentsArray} />
+        <Comments comments={commentsArray} id={id} />
       </div>
     );
   }
-  //
-  //
-  //
+
   if (addComment === true) {
     return (
       <>

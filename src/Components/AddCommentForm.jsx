@@ -15,7 +15,7 @@ function AddCommentForm({ setAddComment, id }) {
   function handleSubmit() {
     postComment(formData);
     setAddComment(false);
-    console.log(formData);
+    window.location.reload();
   }
   function handleChange(event) {
     setFormData({ ...formData, [event.target.name]: event.target.value });

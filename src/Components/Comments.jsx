@@ -1,23 +1,43 @@
 import React, { useState, useEffect } from "react";
+import CommentDelete from "./CommentDelete";
 
-function Comments({ comments }) {
-  const [commentData, setCommentData] = useState([]);
+function Comments({ comments, id }) {
+  const [filteredComments, setFilteredComments] = useState([]);
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
 
+  //
+  //
+  //
   async function getComments() {
     const results = await axios.get(`${url}/project/comments`);
-    setCommentData(results.data);
+    setFilteredComments(
+      results.data.filter((comment) => comment.project === id)
+    );
   }
-  console.log(commentData);
+
   useEffect(() => {
     getComments();
   }, []);
-  return (
-    <div>
-      <ul></ul>
-    </div>
-  );
+
+  if (filteredComments.length > 0) {
+    return (
+      <div>
+        <ul>
+          {filteredComments.map((comment) => {
+            return (
+              <li key={comment._id}>
+                <p>{comment.text}</p>
+                <h5>{comment.username}</h5>
+                <CommentDelete id={comment._id} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+  return <></>;
 }
 
 export default Comments;
