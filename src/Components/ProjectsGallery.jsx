@@ -22,11 +22,7 @@ function ProjectsGallery() {
     );
   }
 
-  return (
-    <>
-      <p>There are unfortunately no results. Try again, friend!</p>
-    </>
-  );
+  return <></>;
 }
 
 export default ProjectsGallery;

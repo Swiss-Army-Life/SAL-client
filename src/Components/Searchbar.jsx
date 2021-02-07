@@ -3,9 +3,7 @@ import SearchContext from "./SearchContext";
 
 function Searchbar() {
   // imported context
-  const { searchResults, setSearchResults, setSearchComplete } = useContext(
-    SearchContext
-  );
+  const { setSearchResults, setSearchComplete } = useContext(SearchContext);
 
   // user input
   const [searchString, setSearchString] = useState("");
