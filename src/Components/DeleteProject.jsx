@@ -5,7 +5,7 @@ function DeleteProject({ id }) {
   const url = "https://morning-taiga-97781.herokuapp.com";
 
   function deleteProject() {
-    axios.delete(`${url}/project/${id}`).then(() => window.location.reload());
+    axios.delete(`${url}/project/${id}`).then(() => window.history.back());
   }
   return (
     <div>
