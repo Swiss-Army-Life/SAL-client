@@ -22,7 +22,7 @@ function CreateProject() {
     // };
 
     const [formState, setFormState] = useState({});
-    const [materialState, setMaterialState] = useState([])
+    // const [materialState, setMaterialState] = useState([])
 
     function createProject() {
         axios
@@ -43,9 +43,9 @@ function CreateProject() {
         // console.log(formState)
     }
 
-    const handleMaterialsChange = (event) => {
-        setMaterialState([...materialState, event.target.value])
-    }
+    // const handleMaterialsChange = (event) => {
+    //     setMaterialState([...materialState, event.target.value])
+    // }
 
     return (
 
