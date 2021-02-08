@@ -1,36 +1,64 @@
 // import React from 'react';
 import React, { useState } from 'react';
 
+
 function CreateProject() {
 
     // fetch api post link and set state 
     const axios = require ("axios");
     const url = "https://morning-taiga-97781.herokuapp.com";
 
-    const initialState = {
-        projectCategory: '',
-        projectTitle: '',
-        description: '',
-    };
+    // const initialState = {
+    //     image: '',
+    //     author: '',
+    //     projectTitle: '',
+    //     description: '',
+    //     projectCategory: '',
+    //     materials:'',
+    //     budget:'',
+    //     video:'',
+    //     gallery:'',
+    //     comments:''
+    // };
 
-    const [formState, setFormState] = useState(initialState);
+    const [formState, setFormState] = useState({});
+    // const [materialState, setMaterialState] = useState([])
+
+    function createProject() {
+        axios
+            .post(`${url}/project/addproject`, formState)
+            .catch((err) => console.log(err));
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        createProject(formState)
         console.log(formState);
-        setFormState(initialState);
+        console.log(materialState)
+        // setFormState(initialState);
     };
 
     const handleChange = (event) => {
-        setFormState({...setFormState, [event.target.id]: event.target.value})
+        setFormState({...formState, [event.target.id]: event.target.value})
+        // console.log(formState)
     }
+
+    // const handleMaterialsChange = (event) => {
+    //     setMaterialState([...materialState, event.target.value])
+    // }
 
     return (
 
         <form onSubmit = {handleSubmit}>
 
-            <label htmlFor="projectCategory">Category:</label>
-            <select id="projectCategory" onChange={handleChange} value={formState.projectCategory}>
+            <label htmlFor="image">Image:</label>
+                        <input type="text"
+                            id="image"
+                            onChange={handleChange}/>
+
+
+            <label htmlFor="category">Category:</label>
+            <select id="category" onChange={handleChange}>
                 <option value="Ceramics">Ceramics</option>
                 <option value="Food">Food</option>
                 <option value="Furniture">Furniture</option>
@@ -39,21 +67,60 @@ function CreateProject() {
                 <option value="Other">Other</option>
             </select>
 
-            <label htmlFor="projectTitle">Title:</label>
+            <label htmlFor="author">Author:</label>
+            <input type="text"
+                   id="author"
+                   onChange={handleChange}/>
+            
+            <label htmlFor="title">Title:</label>
             <input type="text"
                    id="title"
-                   onChange={handleChange}
-                   value={formState.projectTitle}/>
+                   onChange={handleChange}/>
 
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description">Description:</label>
             <textarea 
                     id="description" 
                     cols="30" 
                     rows="10"
-                    onChange={handleChange}
-                    value={formState.description}>
+                    onChange={handleChange}>
                     
             </textarea>
+
+            <label htmlFor="materials">Materials:</label>
+            <textarea 
+                    id="materials" 
+                    cols="30" 
+                    rows="10"
+                    onChange={handleChange}>
+                    
+            </textarea>
+
+
+            {/* <label htmlFor="materials">Materials:</label>
+            <textarea 
+                    id="materials1" 
+                    cols="30" 
+                    rows="1"
+                    onChange={handleChange}>        
+            </textarea>
+            <textarea 
+                    id="materials2" 
+                    cols="30" 
+                    rows="1"
+                    // value= {formState.materials}
+                    onChange={handleChange}>        
+            </textarea> */}
+
+
+            <label htmlFor="budget">Budget:</label>
+            <input type="text"
+                   id="budget"
+                   onChange={handleChange}/>
+
+            <label htmlFor="video">Video:</label>
+                        <input type="text"
+                            id="budget"
+                            onChange={handleChange}/>
 
             <button type="submit">POST</button>
 
