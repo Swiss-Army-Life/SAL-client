@@ -21,7 +21,8 @@ function CreateProject() {
     //     comments:''
     // };
 
-    const [formState, setFormState] = useState(null);
+    const [formState, setFormState] = useState({});
+    const [materialState, setMaterialState] = useState([])
 
     function createProject() {
         axios
@@ -31,8 +32,9 @@ function CreateProject() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // createProject(formState)
+        createProject(formState)
         console.log(formState);
+        console.log(materialState)
         // setFormState(initialState);
     };
 
@@ -41,6 +43,9 @@ function CreateProject() {
         // console.log(formState)
     }
 
+    const handleMaterialsChange = (event) => {
+        setMaterialState([...materialState, event.target.value])
+    }
 
     return (
 
@@ -83,11 +88,19 @@ function CreateProject() {
 
             <label htmlFor="materials">Materials:</label>
             <textarea 
-                    id="materials" 
+                    id="materials1" 
                     cols="30" 
                     rows="1"
-                    onChange={handleChange}>        
+                    onChange={handleMaterialsChange}>        
             </textarea>
+            <textarea 
+                    id="materials2" 
+                    cols="30" 
+                    rows="1"
+                    // value= {formState.materials}
+                    onChange={handleMaterialsChange}>        
+            </textarea>
+
 
             <label htmlFor="budget">Budget:</label>
             <input type="text"
