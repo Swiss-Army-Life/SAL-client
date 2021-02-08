@@ -31,10 +31,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
+const url = `https://morning-taiga-97781.herokuapp.com/project/cat/${category}`;
 const categories = ["Kitchen", "Lighting", "Furniture","Ceramics", "Food", "Gardening" ]
 const [results, setResults] = useState ({})
+
 const CategoryGallery= (category) => {
-  const url = `https://morning-taiga-97781.herokuapp.com/project/cat/${category}`;
+  
   const result = fetch(`url${category}`)
   setResults(results)
   setSearchComplete(true) 
@@ -44,12 +47,12 @@ useEffect(() => {
     }, []);
 return (
   
-  categories.map((category) => {
+  {categories.map((category) => {
     <Link to="/" onClick={getsData(category)}>
-    <h1>{category}</h1>
+    <h1>{categories}</h1>
   </Link>
   
-})
+})}
 
 
 
