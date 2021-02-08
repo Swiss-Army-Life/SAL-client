@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CommentSection from "./CommentSection";
 import UserGallery from "./UserGallery";
+import DeleteProject from "./DeleteProject";
 
 function Project({ match }) {
   const [project, setProject] = useState(null);
@@ -46,6 +47,7 @@ function Project({ match }) {
             );
           })}
         </ul>
+        <DeleteProject id={project.data._id} />
         <CommentSection
           comments={project.data.comments}
           id={project.data._id}
