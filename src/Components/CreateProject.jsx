@@ -88,18 +88,28 @@ function CreateProject() {
 
             <label htmlFor="materials">Materials:</label>
             <textarea 
+                    id="materials" 
+                    cols="30" 
+                    rows="10"
+                    onChange={handleChange}>
+                    
+            </textarea>
+
+
+            {/* <label htmlFor="materials">Materials:</label>
+            <textarea 
                     id="materials1" 
                     cols="30" 
                     rows="1"
-                    onChange={handleMaterialsChange}>        
+                    onChange={handleChange}>        
             </textarea>
             <textarea 
                     id="materials2" 
                     cols="30" 
                     rows="1"
                     // value= {formState.materials}
-                    onChange={handleMaterialsChange}>        
-            </textarea>
+                    onChange={handleChange}>        
+            </textarea> */}
 
 
             <label htmlFor="budget">Budget:</label>
