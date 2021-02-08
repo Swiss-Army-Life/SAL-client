@@ -17,56 +17,60 @@
 
 // import React from "react";
 // import axios from 'axios';
+// import { Link } from "react-router-dom";
 
 // function CategoryGallery(props) {
 //     axios.get(`https://morning-taiga-97781.herokuapp.com/project/cat/${category}`)
 //     .then(res => {
 //         const category=
 //     })
-//   return <div></div>;
+//   return (
+//   <div>
+
+//   </div>)
 // }
 
 // export default CategoryGallery;
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import SearchContext from "./SearchContext";
 
+const CategoryGallery = (category) => {
+  const url = "https://morning-taiga-97781.herokuapp.com/project/cat";
+  const { setSearchResults, setSearchComplete } = useContext(SearchContext);
+  const categories = [
+    "Kitchen",
+    "Lighting",
+    "Furniture",
+    "Ceramics",
+    "Food",
+    "Gardening",
+  ];
+  async function getsData(category) {
+    const result = await fetch(`${url}/${category}`);
+    const resultjson = await result.json();
+    console.log(resultjson);
+    setSearchResults(resultjson);
+    setSearchComplete(true);
+    console.log("firing");
+  }
 
-const url = `https://morning-taiga-97781.herokuapp.com/project/cat/${category}`;
-const categories = ["Kitchen", "Lighting", "Furniture","Ceramics", "Food", "Gardening" ]
-const [results, setResults] = useState ({})
-
-const CategoryGallery= (category) => {
-  
-  const result = fetch(`url${category}`)
-  setResults(results)
-  setSearchComplete(true) 
-}
-useEffect(() => {
-      getsData(category);
-    }, []);
-return (
-  
-  {categories.map((category) => {
-    <Link to="/" onClick={getsData(category)}>
-    <h1>{categories}</h1>
-  </Link>
-  
-})}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  return (
+    <div className="catbut">
+      {categories.map((category) => {
+        return (
+          <button
+            onClick={() => {
+              getsData(category);
+            }}
+          >
+            <h1>{category}</h1>
+          </button>
+        );
+      })}
+    </div>
+  );
+};
 
 // function CategoryGallery() {
 //   const [category, setCategory] = useState("furniture");
