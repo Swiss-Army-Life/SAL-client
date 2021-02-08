@@ -22,7 +22,7 @@ function Searchbar() {
     event.preventDefault();
     setSearchString(event.target.value);
     getResults(searchString).then((result) => {
-      setSearchResults(result);
+      setSearchResults(result.data);
       setSearchComplete(true);
     });
   }
