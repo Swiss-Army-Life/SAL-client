@@ -9,6 +9,7 @@ import SearchContext from "./Components/SearchContext.jsx";
 import Footer from "./Components/Footer.jsx";
 import ProjectsGallery from "./Components/ProjectsGallery";
 import Project from "./Components/Project";
+import CreateProject from "./Components/CreateProject";
 
 // library functionality
 import React, { useEffect, useState } from "react";
@@ -41,6 +42,7 @@ function App() {
           <CategoryGallery />
           <ProjectsGallery />
         </Route>
+        <Route exact path="/addproject" component={CreateProject} />
         <Route exact path="/project/:id" component={Project} />
       </SearchContext.Provider>
       <Footer />
