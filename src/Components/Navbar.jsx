@@ -18,9 +18,9 @@ function Navbar(props) {
 
       {/* ---- Link to Create A Project ---- */}
       <div>
-        <Link to="/project/addproject">Create Project
+        <Link to="/project/addproject">Create Project</Link>
         <CreateProject />
-        </Link>
+        
       </div>
     </div>
   );
