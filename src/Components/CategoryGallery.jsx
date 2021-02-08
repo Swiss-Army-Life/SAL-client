@@ -37,7 +37,9 @@ import SearchContext from "./SearchContext";
 
 const CategoryGallery = (category) => {
   const url = "https://morning-taiga-97781.herokuapp.com/project/cat";
-  const { setSearchResults, setSearchComplete } = useContext(SearchContext);
+  const { searchComplete, setSearchResults, setSearchComplete } = useContext(
+    SearchContext
+  );
   const categories = [
     "Kitchen",
     "Lighting",
@@ -49,27 +51,28 @@ const CategoryGallery = (category) => {
   async function getsData(category) {
     const result = await fetch(`${url}/${category}`);
     const resultjson = await result.json();
-    console.log(resultjson);
     setSearchResults(resultjson);
     setSearchComplete(true);
-    console.log("firing");
   }
 
-  return (
-    <div className="catbut">
-      {categories.map((category) => {
-        return (
-          <button
-            onClick={() => {
-              getsData(category);
-            }}
-          >
-            <h1>{category}</h1>
-          </button>
-        );
-      })}
-    </div>
-  );
+  if (searchComplete === false) {
+    return (
+      <div className="catbut">
+        {categories.map((category) => {
+          return (
+            <button
+              onClick={() => {
+                getsData(category);
+              }}
+            >
+              <h1>{category}</h1>
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+  return <></>;
 };
 
 // function CategoryGallery() {
