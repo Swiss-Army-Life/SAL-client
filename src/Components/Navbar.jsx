@@ -10,12 +10,19 @@ function Navbar(props) {
   };
   return (
     <div className="nav">
-      <Link to="/">
+      {/* <Link to="/">
         <button onClick={resetPage}>HOME</button>
       </Link>
 
       <Link to="/addproject">
         <button>CREATE</button>
+      </Link> */}
+      <Link to="/" onClick={resetPage}>
+        <p>HOME</p>
+      </Link>
+
+      <Link to="/addproject">
+        <p> CREATE</p>
       </Link>
     </div>
   );

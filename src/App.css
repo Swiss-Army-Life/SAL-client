@@ -1,3 +1,5 @@
+/* ---------Animation for category buttons------------ */
+
 @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
 html,
@@ -38,6 +40,7 @@ div[class*="box"] {
   transition: all 0.5s;
   position: relative;
 }
+
 .btn-two span {
   z-index: 2;
   display: block;
@@ -78,15 +81,6 @@ div[class*="box"] {
   background-color: rgba(255, 255, 255, 0);
 }
 
-/* .catbut{/* display: flex; */
-/* justify-content: space-between;
-  align-items: center;
-  min-height: auto;
-  list-style: none;
-  margin: 1rem;
-  font-size: 33px; */
-/* }  */
-
 /* ---------------------------------------- */
 
 body {
@@ -98,6 +92,10 @@ body {
 
   /* height: 500px;
     width: 500px; */
+}
+
+button {
+  background-color: red;
 }
 
 .logo {
@@ -128,36 +126,34 @@ body {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: auto;
   list-style: none;
   margin: 1rem;
   font-size: 33px;
-  text-decoration: underline;
-  color: black;
-  /* background-image: linear-gradient(#f265197c, #f6ae2d); */
+  /* text-decoration: underline; */
+  text-decoration: none;
+  color: rgb(244, 45, 42);
   width: 100%;
-  /* text-shadow: 2px 2px #ff0000; */
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 1px 1px black;
 }
 
-@media (min-width: 1000px) {
-  .gallerycards {
-    column-count: 3;
-  }
+.nav a p {
+  color: red;
 }
-@media (min-width: 1000px) {
-  .gallerycards {
-    column-count: 3;
-  }
+
+gallerylist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 30px;
 }
-@media (min-width: 1400px) {
-  .gallerycards {
-    column-count: 4;
-  }
+.gallerycard img {
+  width: 100%;
 }
-@media (min-height: 1400px) {
-  .gallerycards {
-    column-count: 4;
-  }
+.gallerycard {
+  padding: 10px;
+  display: grid;
 }
