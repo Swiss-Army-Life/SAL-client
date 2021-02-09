@@ -23,17 +23,20 @@ const CategoryGallery = (category) => {
 
   if (searchComplete === false) {
     return (
-      <div className="catbut">
+      <div className="box-2">
         {categories.map((category) => {
           return (
-            <button
+            <div
+              className="btn btn-two"
+              // <button
               onClick={() => {
                 getsData(category);
               }}
               key={category}
             >
-              <h1>{category}</h1>
-            </button>
+              <span>{category}</span>
+              {/* </button> */}
+            </div>
           );
         })}
       </div>

@@ -1,10 +1,10 @@
 import React from "react";
+import "../App.css";
 import { Link } from "react-router-dom";
-
 function GalleryCards({ projects }) {
   if (projects.length > 0) {
     return (
-      <>
+      <div className="gallerycards">
         {projects.map((e) => {
           return (
             <Link to={`project/${e._id}`} key={e._id} className="project-card">
@@ -17,11 +17,9 @@ function GalleryCards({ projects }) {
             </Link>
           );
         })}
-      </>
+      </div>
     );
   }
-
   return <div></div>;
 }
-
 export default GalleryCards;
