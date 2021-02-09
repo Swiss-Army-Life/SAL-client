@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommentSection from "./CommentSection";
 import UserGallery from "./UserGallery";
 import DeleteProject from "./DeleteProject";
+import UpdateProjBtn from "./UpdateProjBtn";
 
 function Project({ match }) {
   const [project, setProject] = useState(null);
@@ -47,6 +48,7 @@ function Project({ match }) {
             );
           })}
         </ul>
+        <UpdateProjBtn id={project.data._id} />
         <DeleteProject id={project.data._id} />
         <CommentSection
           comments={project.data.comments}
@@ -60,3 +62,4 @@ function Project({ match }) {
 }
 
 export default Project;
+
