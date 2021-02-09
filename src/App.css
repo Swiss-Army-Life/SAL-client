@@ -1,3 +1,23 @@
+body {
+  background-color: #0fa39e;
+}
+.img-logo {
+  padding: 0;
+  /* position: relative; */
+
+  /* height: 500px;
+    width: 500px; */
+}
+
+.logo {
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 50%;
+  margin-top: -1rem;
+}
+
 .links {
   font-size: 20px;
   position: relative;
@@ -11,6 +31,35 @@
   text-shadow: 2px 2px #00ff73;
 }
 
+button {
+  background-color: #ff6600;
+}
+
+.catbut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: auto;
+  list-style: none;
+  margin: 1rem;
+  font-size: 33px;
+}
+
 .kemistry {
   text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: auto;
+  list-style: none;
+  margin: 1rem;
+  font-size: 33px;
+  text-decoration: underline;
+  color: black;
+  /* background-image: linear-gradient(#f265197c, #f6ae2d); */
+  width: 100%;
+  /* text-shadow: 2px 2px #ff0000; */
 }
