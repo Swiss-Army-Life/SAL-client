@@ -1,11 +1,10 @@
 import React from "react";
-import Logo from "../Images/swiss-diy.png";
+import Logo from "../Images/life-logo.png";
 
 function Header(props) {
   return (
-    <div>
-      <h1>Swiss Army Life</h1>
-      <img src={Logo} alt="Tools" />
+    <div className="logo">
+      <img className="img-logo" src={Logo} alt="Tools" />
     </div>
   );
 }
