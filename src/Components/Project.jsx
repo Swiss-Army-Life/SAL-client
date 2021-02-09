@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CommentSection from "./CommentSection";
-import UserGallery from "./UserGallery";
 import DeleteProject from "./DeleteProject";
 import UpdateProjBtn from "./UpdateProjBtn";
 
@@ -54,7 +53,6 @@ function Project({ match }) {
           comments={project.data.comments}
           id={project.data._id}
         />
-        <UserGallery images={project.data.gallery} />
       </>
     );
   }
@@ -62,4 +60,3 @@ function Project({ match }) {
 }
 
 export default Project;
-
