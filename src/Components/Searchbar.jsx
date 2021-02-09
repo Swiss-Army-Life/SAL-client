@@ -11,7 +11,6 @@ function Searchbar() {
   // api searcher function
   const axios = require("axios");
   const url = "https://morning-taiga-97781.herokuapp.com";
-
   function getResults(searchString) {
     const result = axios.get(`${url}/project/search/${searchString}`);
     return result;
