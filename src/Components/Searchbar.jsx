@@ -38,7 +38,7 @@ function Searchbar() {
           className="searchTerm"
           type="text"
           // id="input"
-          placeholder="what are we making today?"
+          placeholder="What are we making?"
           name="searchterm"
           onChange={handleChange}
           required
