@@ -32,17 +32,18 @@ function Searchbar() {
   }
 
   return (
-    <div className="form">
+    <div className="search">
       <form onSubmit={handleSubmit}>
         <input
+          className="searchTerm"
           type="text"
-          id="input"
+          // id="input"
           placeholder="what are we making today?"
           name="searchterm"
           onChange={handleChange}
           required
         />
-        <button type="submit" className="searchbtn">
+        <button type="submit" className="searchButton">
           search
         </button>
       </form>
