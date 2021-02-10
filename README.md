@@ -43,7 +43,7 @@ Experienced makers can display their creations with users of all skill levels, m
 ### Planning 
 * [wireframes](planning/wireframe-01.jpg)
 * [components](planning/components_finalv-01.jpg)
-* [screenshots]
+* [screenshots](planning/livescreenshots-01.jpg)
 
 ### Installation Instructions 
 * fork and clone this repo to your personal Github
