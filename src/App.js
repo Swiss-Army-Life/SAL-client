@@ -24,7 +24,6 @@ function App() {
   return (
     <>
       <Header />
-      <Navbar />
       <SearchContext.Provider
         value={{
           searching,
@@ -37,6 +36,7 @@ function App() {
           setSearchComplete,
         }}
       >
+        <Navbar />
         <Route exact path="/">
           <Searchbar />
           <CategoryGallery />

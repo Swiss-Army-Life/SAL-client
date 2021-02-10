@@ -23,16 +23,20 @@ const CategoryGallery = (category) => {
 
   if (searchComplete === false) {
     return (
-      <div className="catbut">
+      <div className="box-2">
         {categories.map((category) => {
           return (
-            <button
+            <div
+              className="btn btn-two"
+              // <button
               onClick={() => {
                 getsData(category);
               }}
+              key={category}
             >
-              <h1>{category}</h1>
-            </button>
+              <span>{category}</span>
+              {/* </button> */}
+            </div>
           );
         })}
       </div>
@@ -40,35 +44,5 @@ const CategoryGallery = (category) => {
   }
   return <></>;
 };
-
-// function CategoryGallery() {
-//   const [category, setCategory] = useState("furniture");
-//   const [categoryArray, setCategoryArray] = useState([]);
-
-//   const getCat = async (category) => {
-//     const url = `https://morning-taiga-97781.herokuapp.com/project/cat/${category}`;
-//     console.log(url);
-//     const result = await fetch(url);
-//     const resultjson = await result.json();
-//     console.log(resultjson);
-//     setCategoryArray(resultjson);
-//   };
-//   console.log(category);
-//   useEffect(() => {
-//     getCat(category);
-//   }, []);
-//   return (
-//     <section className="cats">
-//       {categoryArray.map((category) => {
-//         console.log(category);
-//         return (
-//           <div className="cats">
-//             <h3>{category.title}</h3>
-//           </div>
-//         );
-//       })}
-//     </section>
-//   );
-// }
 
 export default CategoryGallery;

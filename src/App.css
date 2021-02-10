@@ -1,12 +1,138 @@
+/* ---------Animation for category buttons------------ */
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "Open Sans Condensed", sans-serif;
+  overflow-y: scroll;
+}
+
+div[class*="box"] {
+  height: 33.33%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-2 {
+  background-color: #ff6600;
+}
+
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+}
+
+.btn-two {
+  color: #fff;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.btn-two span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.btn-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* ---------------------------------------- */
+
 body {
   background-color: #0fa39e;
 }
+
+/* -----------Animation for search box------ */
+
+.search {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 5px;
+}
+
+.searchTerm {
+  /* width: 100%; */
+  border: 3px solid #bc87e8;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem;
+  width: 50%;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+  background-color: #caf0f8;
+  box-shadow: 1px 1px black;
+}
+
+.searchButton {
+  width: 73px;
+  height: 43px;
+  border: 1px solid #00b4cc;
+  background-color: #06bf78;
+  text-align: center;
+  color: #fff;
+  /* border-radius: 0 5px 5px 0; */
+  cursor: pointer;
+  font-size: 20px;
+  margin: 10px;
+  font-family: "Permanent Marker", cursive;
+  box-shadow: 1px 1px black;
+}
+
+/* ---------------------------------- */
+
 .img-logo {
   padding: 0;
-  /* position: relative; */
+}
 
-  /* height: 500px;
-    width: 500px; */
+button {
+  background-color: red;
 }
 
 .logo {
@@ -31,35 +157,48 @@ body {
   text-shadow: 2px 2px #00ff73;
 }
 
-button {
-  background-color: #ff6600;
-}
-
-.catbut {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: auto;
-  list-style: none;
-  margin: 1rem;
-  font-size: 33px;
-}
-
 .kemistry {
   text-align: center;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: auto;
   list-style: none;
   margin: 1rem;
   font-size: 33px;
-  text-decoration: underline;
-  color: black;
-  /* background-image: linear-gradient(#f265197c, #f6ae2d); */
+  /* text-decoration: underline; */
+  text-decoration: none;
+  color: #034d4f;
   width: 100%;
-  /* text-shadow: 2px 2px #ff0000; */
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px black;
+}
+
+.nav a p {
+  color: #3e00ff;
+}
+
+.gallerylist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 30px;
+}
+.gallerycard img {
+  width: 100%;
+}
+.gallerycard {
+  padding: 10px;
+  display: grid;
+}
+
+.projectdetail {
+  text-align: center;
+}
+
+.materials {
+  list-style: none;
 }
