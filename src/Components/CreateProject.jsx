@@ -48,7 +48,7 @@ function CreateProject() {
       <textarea
         id="description"
         cols="30"
-        rows="10"
+        rows="1"
         onChange={handleChange}
       ></textarea>
 
@@ -56,7 +56,7 @@ function CreateProject() {
       <textarea
         id="materials"
         cols="30"
-        rows="10"
+        rows="1"
         onChange={handleChange}
       ></textarea>
 
