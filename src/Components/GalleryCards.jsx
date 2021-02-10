@@ -10,10 +10,12 @@ function GalleryCards({ projects }) {
             <Link to={`project/${e._id}`} key={e._id}>
               <div className="gallerycard" key={e._id}>
                 <img src={e.image} alt="" />
-                <h3>{e.title}</h3>
-                <h6>{e.category}</h6>
-                <p> Project by: {e.author}</p>
-                <p>Budget: {e.budget}</p>
+                <section classname="info">
+                  <h3>{e.title}</h3>
+                  <h6>{e.category}</h6>
+                  <p> Project by: {e.author}</p>
+                  <p>Budget: {e.budget}</p>
+                </section>
               </div>
             </Link>
           );

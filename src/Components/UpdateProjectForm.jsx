@@ -25,7 +25,7 @@ function UpdateProjectForm({ setUpdateProject, id }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="submitForm">
       <label htmlFor="image">Image:</label>
       <input type="text" id="image" onChange={handleChange} />
 

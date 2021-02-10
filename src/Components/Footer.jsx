@@ -14,14 +14,14 @@ function Footer(props) {
               target="blank"
               rel="noreferrer"
             >
-              <img src={GH} alt="Github" height="60px" />
+              <img src={GH} alt="Github" />
             </a>
             <a
               href="https://www.linkedin.com/in/kelpius-zannou/"
               target="blank"
               rel="noreferrer"
             >
-              <img src={LK} alt="Github" height="60px" />
+              <img src={LK} alt="Github" className="linkedin" />
             </a>
           </div>
           <div className="emaun">
@@ -31,14 +31,14 @@ function Footer(props) {
               target="blank"
               rel="noreferrer"
             >
-              <img src={GH} alt="Github" height="60px" />
+              <img src={GH} alt="Github" />
             </a>
             <a
               href="https://www.linkedin.com/in/emaunhyde"
               target="blank"
               rel="noreferrer"
             >
-              <img src={LK} alt="Github" height="60px" />
+              <img src={LK} alt="Github" className="linkedin" />
             </a>
           </div>
           <div className="michaelann">
@@ -48,14 +48,14 @@ function Footer(props) {
               target="blank"
               rel="noreferrer"
             >
-              <img src={GH} alt="Github" height="60px" />
+              <img src={GH} alt="Github" />
             </a>
             <a
               href="https://www.linkedin.com/in/michaelann-awesome/"
               target="blank"
               rel="noreferrer"
             >
-              <img src={LK} alt="Github" height="60px" />
+              <img src={LK} alt="Github" className="linkedin" />
             </a>
           </div>
         </div>
