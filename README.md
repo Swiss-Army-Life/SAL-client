@@ -9,7 +9,7 @@ Experienced makers can display their creations with users of all skill levels, m
 'Board-dom' is a thing of the past! Join Swiss Army Life and nail down your next fabrication!
 
 ### The Team
-##### SRUM Master - Kelpius Zannou
+##### SCRUM Master - Kelpius Zannou
 ##### Communication Leader - Michaelann Awesome
 ##### Project Coordinatory - Emaun Hyde
 
